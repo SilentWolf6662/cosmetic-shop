@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+}
+
+@theme {
+	--animate-fly: fly 0.4s infinite;
+	@keyframes fly {
+		50% {
+            transform: translateY(-3px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+	}
+    --animate-wing-beat-right: wing-beat-right 0.25s infinite;
+    @keyframes wing-beat-right {
+        50% {
+            transform: rotateX(60deg) skew(-20deg) rotateZ(25deg);
+        }
+
+        100% {
+            transform: rotateX(0) skew(-20deg);
+        }
+    }
+    --animate-wing-beat-left: wing-beat-left 0.25s infinite;
+    @keyframes wing-beat-left {
+        50% {
+            transform: rotateX(-65deg) skew(20deg) rotateZ(-10deg);
+        }
+
+        100% {
+            transform: rotateX(0) skew(20deg);
+        }
+    }
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
+}
