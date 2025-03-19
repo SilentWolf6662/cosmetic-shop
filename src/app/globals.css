@@ -6,36 +6,40 @@
 }
 
 @theme {
+    --color-base: #fba681;
+    --color-divider: #474a52;
+    --color-primary: #fba681;
+    --color-footer: #b6bfc1;
 	--animate-fly: fly 0.4s infinite;
 	@keyframes fly {
 		50% {
-            transform: translateY(-3px);
-        }
+			transform: translateY(-3px);
+		}
 
-        100% {
-            transform: translateY(0px);
-        }
+		100% {
+			transform: translateY(0px);
+		}
 	}
-    --animate-wing-beat-right: wing-beat-right 0.25s infinite;
-    @keyframes wing-beat-right {
-        50% {
-            transform: rotateX(60deg) skew(-20deg) rotateZ(25deg);
-        }
+	--animate-wing-beat-right: wing-beat-right 0.25s infinite;
+	@keyframes wing-beat-right {
+		50% {
+			transform: rotateX(60deg) skew(-20deg) rotateZ(25deg);
+		}
 
-        100% {
-            transform: rotateX(0) skew(-20deg);
-        }
-    }
-    --animate-wing-beat-left: wing-beat-left 0.25s infinite;
-    @keyframes wing-beat-left {
-        50% {
-            transform: rotateX(-65deg) skew(20deg) rotateZ(-10deg);
-        }
+		100% {
+			transform: rotateX(0) skew(-20deg);
+		}
+	}
+	--animate-wing-beat-left: wing-beat-left 0.25s infinite;
+	@keyframes wing-beat-left {
+		50% {
+			transform: rotateX(-65deg) skew(20deg) rotateZ(-10deg);
+		}
 
-        100% {
-            transform: rotateX(0) skew(20deg);
-        }
-    }
+		100% {
+			transform: rotateX(0) skew(20deg);
+		}
+	}
 }
 
 @theme inline {
