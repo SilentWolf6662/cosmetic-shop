@@ -1,41 +1,58 @@
-import Image from "next/image";
+export default async function Home() {
+    try {
+        const response = await fetch("https://b45.dk/umbraco/api/tenancy/GetAllTenancies", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
 
-export default function Home() {
-    return (
-        <>
-            {/* Hero Section */}
-            <section className="bg-purple-800 text-white py-20">
-                <div className="max-w-7xl mx-auto text-center">
-                    <h2 className="text-4xl font-bold mb-4">Welcome to Cosmetic Shop</h2>
-                    <p className="text-xl mb-8">Explore our premium collection of skincare, makeup, and beauty products.</p>
-                    <button type="button" className="bg-white text-purple-600 py-2 px-6 rounded-lg hover:bg-gray-100">
-                        Shop Now
-                    </button>
-                </div>
-            </section>
+        // Check if response is successful
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
 
-            {/* Featured Products */}
-            <section className="py-16">
-                <div className="max-w-7xl mx-auto text-center">
-                    <h3 className="text-3xl font-bold mb-8">Featured Products</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Mocked Products - Add logic to map real product data */}
-                        <div className="bg-white p-6 rounded-lg shadow-lg">
-                            <img
-                                src="/images/product1.jpg"
-                                alt="Product"
-                                className="w-full h-48 object-cover rounded-md mb-4"
-                            />
-                            <h4 className="text-xl font-semibold">Lipstick</h4>
-                            <p className="text-gray-500 mb-4">$25.99</p>
-                            <button type="button" className="bg-purple-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700">
-                                Add to Cart
-                            </button>
+        const data = await response.json();
+
+        return (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+                {data.map((tenancy) => (
+                    <div key={tenancy.ID} className="border rounded-lg p-4 shadow-md hover:shadow-lg transition-all">
+                        {/* Title */}
+                        <h2 className="text-xl font-semibold text-blue-800">{tenancy.Titel}</h2>
+
+                        {/* Area Info */}
+                        <p className="text-gray-700">{tenancy.AreaName}</p>
+                        <p className="text-gray-500">{tenancy.City}, {tenancy.ZipCode}</p>
+
+                        {/* Rent Info */}
+                        <p className="mt-2 text-lg font-bold text-green-600">
+                            {tenancy.MinRent} - {tenancy.MaxRent} DKK
+                        </p>
+
+                        {/* Balcony / Garden Info */}
+                        <div className="mt-2 text-sm">
+                            {tenancy.Balcony ? <span className="text-green-500">Balcony ✔</span> : <span className="ml-2 text-red-500">Balcony ❌</span>}
+                            {tenancy.Garden ? <span className="ml-2 text-green-500">Garden ✔</span> : <span className="ml-2 text-red-500">Garden ❌</span>}
                         </div>
-                        {/* Repeat the product divs with real data */}
+
+                        {/* Images */}
+                        {tenancy.Images && tenancy.Images.length > 0 && (
+                            <div className="mt-4">
+                                <img src={`https://b45.dk${tenancy.Images[0]}`} alt={tenancy.Name} className="w-full h-48 object-cover rounded-lg" />
+                            </div>
+                        )}
+
+                        {/* Area Description */}
+                        <div className="mt-4 text-sm text-gray-600">
+                            <div dangerouslySetInnerHTML={{ __html: tenancy.AreaTekstShort }} />
+                        </div>
                     </div>
-                </div>
-            </section>
-        </>
-    );
+                ))}
+            </div>
+        );
+    } catch (error) {
+        console.error(error);
+        return <p className="text-red-500">Failed to load data.</p>;
+    }
 }
