@@ -13,7 +13,7 @@ export default async function ContactBookSection() {
                 </p>
                 <Button text="Book Now" className="" />
             </section>
-            <section className="bg-white py-8 h-full text-black flex justify-center items-center" style={{ backgroundImage: "url('/contactbg.png')" }}>
+            <section className="bg-white py-8 h-full text-black flex justify-center items-center bg-cover bg-center" style={{ backgroundImage: "url('/contactbg.png')" }}>
                 <div className="flex flex-col w-1/6 justify-center items-start ml-96">
                     <p className="font-bold tracking-[4px] uppercase py-0.5 px-1 bg-[#232730] text-base text-sm">
                         Quick estimate

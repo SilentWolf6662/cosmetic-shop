@@ -11,7 +11,7 @@
     --color-primary: #fba681;
     --color-footer: #b6bfc1;
     --font-EBGaramond: 'EB Garamond', serif;
-    --font-geist-sans: 'Inter', sans-serif;
+    --font-Inter: 'Inter', sans-serif;
 	--animate-fly: fly 0.4s infinite;
 	@keyframes fly {
 		50% {

@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+type Event = {
+    id: string;
+    title: string;
+    description: string;
+    date: string;
+    image: string;
+}
+
 // Format date to Time in format like "12:00 PM" (DK: "12:00")
 function FormatTime(date: string) {
     const d = new Date(date);
@@ -21,7 +29,7 @@ export default async function EventSection() {
     });
     const data = await res.json();
     return (
-        <section className="bg-white py-8 h-auto text-black flex flex-col justify-center items-center mb-10">
+        <section className="bg-white py-8 h-auto text-black flex flex-col justify-center items-center pb-20">
             <div className="flex flex-col w-1/2 justify-center items-center mb-10">
                 <p className="font-bold bg-base tracking-[4px] uppercase py-0.5 px-3 text-[#232730] text-sm">Our Events</p>
                 <h1 className="font-bold mb-3.5 text-5xl py-3.5 font-EBGaramond px-6 capitalize text-[#2b3132] tracking-tighter">Upcoming Events</h1>
@@ -29,7 +37,7 @@ export default async function EventSection() {
             </div>
             <div className="flex w-full h-auto justify-center items-center space-x-6">
                 {
-                    data.events.map((event) => (
+                    data.events.map((event: Event) => (
                         <div key={event.id} className="flex flex-col border border-black/30 justify-center items-center peer relative w-sm ">
                             <div className="absolute left-3 -top-2 w-10 h-18 bg-base text-center flex items-center justify-center">
                                 <p className="text-wrap font-EBGaramond font-bold capitalize">{FormatDate(event.date)}</p>
