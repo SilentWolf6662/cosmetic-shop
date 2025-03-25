@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 const poppins = Poppins({
     variable: "--font-poppins",
@@ -36,20 +37,7 @@ export default function RootLayout({
             >
                 <div className="flex flex-col min-h-screen bg-gray-50">
                     {/* Header */}
-                    <header className="bg-black text-white py-6">
-                        <div className="max-w-7xl mx-auto flex justify-between items-center">
-                            <h1 className="text-3xl font-semibold">Fashion Stylist</h1>
-                            <nav>
-                                <ul className="flex space-x-6">
-                                    <li><a href="/" className="hover:text-gray-400">Home</a></li>
-                                    <li><a href="/about" className="hover:text-gray-400">About</a></li>
-                                    <li><a href="/services" className="hover:text-gray-400">Services</a></li>
-                                    <li><a href="/shop" className="hover:text-gray-400">Shop</a></li>
-                                    <li><a href="/contact" className="hover:text-gray-400">Contact</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </header>
+                    <Header />
 
                     {/* Main Content */}
                     <main className="flex-1">{children}</main>

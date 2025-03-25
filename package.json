@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "@stripe/stripe-js": "^6.1.0",
-        "next": "15.2.2",
+        "next": "^15.2.4",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-icons": "^5.5.0",
@@ -22,7 +22,12 @@
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+        "@typescript-eslint/eslint-plugin": "^8.28.0",
+        "@typescript-eslint/parser": "^8.28.0",
+        "biome": "^0.2.2",
         "clsx": "^2.1.1",
+        "eslint": "^9.23.0",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
         "tailwind-merge": "^3.0.2",
         "tailwindcss": "^4",
         "typescript": "^5"

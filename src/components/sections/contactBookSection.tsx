@@ -15,7 +15,7 @@ export default async function ContactBookSection() {
             </section>
             <section className="bg-white py-8 h-full text-black flex justify-center items-center bg-cover bg-center" style={{ backgroundImage: "url('/contactbg.png')" }}>
                 <div className="flex flex-col w-1/6 justify-center items-start ml-96">
-                    <p className="font-bold tracking-[4px] uppercase py-0.5 px-1 bg-[#232730] text-base text-sm">
+                    <p className="font-bold tracking-[4px] uppercase py-0.5 px-1 bg-muted text-base text-sm">
                         Quick estimate
                     </p>
                     <h1 className="font-bold mb-3.5 text-5xl py-3.5 font-EBGaramond -px-6 capitalize text-[#2b3132] tracking-tighter">Get a free quote now</h1>

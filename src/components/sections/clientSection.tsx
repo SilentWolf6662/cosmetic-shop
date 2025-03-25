@@ -31,7 +31,7 @@ const iconMap: IconMap = {
     linkedin: FaLinkedinIn,
 };
 
-export default async function TeamSection() {
+export default async function ClientSection() {
     const res = await fetch('http://localhost:3000/api/teams', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },

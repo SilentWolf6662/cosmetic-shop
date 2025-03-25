@@ -31,7 +31,7 @@ export default async function EventSection() {
     return (
         <section className="bg-white py-8 h-auto text-black flex flex-col justify-center items-center pb-20">
             <div className="flex flex-col w-1/2 justify-center items-center mb-10">
-                <p className="font-bold bg-base tracking-[4px] uppercase py-0.5 px-3 text-[#232730] text-sm">Our Events</p>
+                <p className="font-bold bg-base tracking-[4px] uppercase py-0.5 px-3 text-muted text-sm">Our Events</p>
                 <h1 className="font-bold mb-3.5 text-5xl py-3.5 font-EBGaramond px-6 capitalize text-[#2b3132] tracking-tighter">Upcoming Events</h1>
                 <p className="text-center w-2/3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam consequatur cum voluptatibus odit sequi reiciendis repudiandae culpa rerum?</p>
             </div>

@@ -20,7 +20,7 @@ export default function NewsletterSection() {
     return (
         <section className="bg-gray-800 py-8 bg-cover bg-center h-auto text-black flex justify-evenly" style={{ backgroundImage: "url('/newsletterbg.png')" }}>
             <div className="flex flex-col w-1/2 justify-center items-center">
-                <p className="font-bold bg-base tracking-[4px] uppercase py-0.5 px-3 text-[#232730] text-sm">
+                <p className="font-bold bg-base tracking-[4px] uppercase py-0.5 px-3 text-muted text-sm">
                     Get exclusive rewards
                 </p>
                 <h1 className="font-bold mb-3.5 text-5xl py-3.5 font-EBGaramond px-6 capitalize text-[#2b3132] tracking-tighter">Subscribe to our newsletter</h1>
